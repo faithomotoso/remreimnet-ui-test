@@ -16,7 +16,7 @@ Widget cardWidget(
           BoxShadow(color: Colors.grey.withOpacity(0.6), blurRadius: 12)
         ]),
 //    width: width,
-//    height: height,
+    height: height,
     child: child,
   );
 }
@@ -66,12 +66,26 @@ Widget transactionCard({Transaction transaction, double height}) {
               Text(
                 transaction.detail,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
-                  fontSize: 14
-                ),
+                    color: Colors.white.withOpacity(0.7), fontSize: 14),
               )
             ],
           )
         ],
       ));
+}
+
+Widget customButton({Icon icon, Function onPressed, Color color}) {
+  return GestureDetector(
+    onTap: onPressed,
+    child: Container(
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+          color: color != null ? color : lightPurple,
+        borderRadius: BorderRadius.circular(14)
+      ),
+      child: Center(
+        child: icon
+      ),
+    ),
+  );
 }

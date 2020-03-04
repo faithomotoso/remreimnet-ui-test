@@ -4,9 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:reimnet_flutter/model/UserModel.dart';
+import 'package:reimnet_flutter/screens/transaction_screen.dart';
 import 'package:reimnet_flutter/utils/components.dart';
 import 'package:reimnet_flutter/utils/dimens.dart';
 import 'package:reimnet_flutter/utils/helpers.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -29,8 +31,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     dimens = Dimens(context);
-    print("Scale factor: ${MediaQuery.of(context).devicePixelRatio}");
-    print("Font: ${Theme.of(context).primaryTextTheme.body1.fontSize}");
     return Scaffold(
       backgroundColor: offWhite,
       bottomNavigationBar: Theme(
@@ -306,23 +306,31 @@ class _HomeState extends State<Home> {
                           SizedBox(
                             height: 2,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Transactions",
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, CupertinoPageRoute(builder: (context) => ScopedModel<User>(model: userModel, child: TransactionScreen(),)));
+                            },
+                            child: Container(
+                              color: Colors.white,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    "Transactions",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_right,
+                                    color: Colors.black,
+                                    size: 28,
+                                  )
+                                ],
                               ),
-                              Icon(
-                                Icons.keyboard_arrow_right,
-                                color: Colors.black,
-                                size: 28,
-                              )
-                            ],
+                            ),
                           ),
                           SizedBox(
                             height: 10,

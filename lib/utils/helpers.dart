@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 
 final Color greenColor = Color(0xff29876e);
-final Color lightPurple = Color(0xfff7f6fd);
+final Color lightPurple = Color(0xfff7f1fd);
 final Color yellowColor = Color(0xfffcc100);
 final Color offWhite = Color(0xfffefefe);
 
