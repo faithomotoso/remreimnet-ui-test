@@ -10,12 +10,27 @@ class User extends Model{
   double _usedLimit = 20000;
   List<Currency> _currencies = [Currency(name: "USD", symbol: "\$"), Currency(name: "EUR", symbol: "\u8364")];
   Currency _selectedCurrency = Currency(name: "USD", symbol: "\$");
+  List<Transaction> _transactions = [
+    Transaction(
+      name: "Victa Willie",
+      amount: "+\$597",
+      photoLoc: "assets/avatar/avatar2.jpg",
+      detail: "Received 2h ago"
+    ),
+    Transaction(
+        name: "Vladimir",
+        amount: "-\$146",
+        photoLoc: "assets/avatar/avatar3.png",
+        detail: "Received 4h ago"
+    )
+  ];
 
   String get maskedAccountNumber => _maskedAccountNumber;
   double get availableBalance => _availableBalance;
   double get monthlyLimit => _monthlyLimit;
   double get usedLimit => _usedLimit;
   Currency get currency => _selectedCurrency;
+  List<Transaction> get transactions => _transactions;
 
   double calculateUsedLimitPercentage(){
     return _usedLimit / _monthlyLimit * 100;
