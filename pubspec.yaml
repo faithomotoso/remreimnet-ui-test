@@ -25,7 +25,6 @@ dependencies:
   cupertino_icons: ^0.1.2
   scoped_model: ^1.0.1
   flutter_svg: ^0.17.2
-  flutter_masked_text: ^0.8.0
   intl: ^0.16.0
   percent_indicator: ^2.1.1+1
 #  flutter_keyboard_visibility: ^0.7.0
@@ -82,11 +81,9 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   fonts:
-    - family: Roboto
+    - family: CREDC
       fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700
-    - family: GoogleSans
+        - asset: assets/fonts/CREDC.ttf
+    - family: Consolas
       fonts:
-        - asset: assets/fonts/GoogleSans-Regular.ttf
+        - asset: assets/fonts/consola.ttf

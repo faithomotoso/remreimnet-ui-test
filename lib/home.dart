@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:reimnet_flutter/model/UserModel.dart';
 import 'package:reimnet_flutter/screens/transaction_screen.dart';
@@ -61,9 +62,8 @@ class _HomeState extends State<Home> {
                 ),
                 title: SizedBox()),
             BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.card_membership,
-                ),
+            icon: SvgPicture.asset("assets/cards.svg",
+            color: selectedIndex == 2 ? Colors.black : Colors.grey,),
                 title: SizedBox()),
             BottomNavigationBarItem(
                 icon: Icon(
@@ -74,7 +74,6 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Container(
-//        margin: EdgeInsets.only(bottom: 50),
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -114,11 +113,9 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.center,
                     child: Container(
                       width: dimens.width * 0.9,
-//                      color: Colors.purpleAccent,
                       child: Column(
                         children: <Widget>[
                           cardWidget(
-//                              width: dimens.width * 0.8,
                               child: Column(
                             children: <Widget>[
                               Row(
@@ -238,7 +235,6 @@ class _HomeState extends State<Home> {
                             ],
                           )),
                           cardWidget(
-//                              width: dimens.width * 0.8,
                               child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
@@ -312,6 +308,7 @@ class _HomeState extends State<Home> {
                             },
                             child: Container(
                               color: Colors.white,
+                              margin: EdgeInsets.only(left: 10, right: 10),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -327,7 +324,7 @@ class _HomeState extends State<Home> {
                                     Icons.keyboard_arrow_right,
                                     color: Colors.black,
                                     size: 28,
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -364,8 +361,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-
-//      body: body(),
     );
   }
 

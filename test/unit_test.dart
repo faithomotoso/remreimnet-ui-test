@@ -30,5 +30,13 @@ void main() {
       expect(user.currencies[0].name, "USD");
       expect(user.currencies[1].name, "EUR");
     });
+
+    test("Tests usd to eur conversion", (){
+      expect(user.conversionRates[0].convert(amount: 500), "443.45");
+    });
+
+    test("Tests eur to usd conversion", (){
+      expect(user.conversionRates[1].convert(amount: 500), "563.75");
+    });
   });
 }

@@ -78,4 +78,9 @@ class Conversion {
   String toString() {
     return "$one $name = $conv $convName";
   }
+
+  String convert({double amount}){
+    return (amount * conv).toStringAsFixed(2);
+  }
+
 }
